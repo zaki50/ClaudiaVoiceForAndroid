@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voice_assets">
+        <item>01sahajimeru.wav</item>
+        <item>03syuuryou.wav</item>
+        <item>04oujougiwa.wav</item>
+        <item>05okazure.wav</item>
+        <item>06windowsazureha.wav</item>
+        <item>07azurenisite.wav</item>
+        <item>08windowsazure.wav</item>
+        <item>09cloudwoyoro.wav</item>
+        <item>10microsoft.wav</item>
+        <item>11mangadewakaru.wav</item>
+        <item>12sorenara.wav</item>
+        <item>13blue.wav</item>
+        <item>14azurenojituryoku.wav</item>
+        <item>16finiiish.wav</item>
+        <item>17goo.wav</item>
+        <item>18par.wav</item>
+        <item>19choki.wav</item>
+        <item>20aikogoo.wav</item>
+        <item>21aikopar.wav</item>
+        <item>22aikochoki.wav</item>
+        <item>27goodmorningazuresky.wav</item>
+        <item>28denwa.wav</item>
+        <item>29mail.wav</item>
+        <item>30start.wav</item>
+        <item>31deploykaishi.wav</item>
+        <item>32deploykanryo.wav</item>
+        <item>33build.wav</item>
+        <item>34sippai.wav</item>
+        <item>35daiseikou.wav</item>
+        <item>36ei.wav</item>
+        <item>37ah.wav</item>
+        <item>38otsukare.wav</item>
+        <item>39kokogapoint.wav</item>
+        <item>40chui.wav</item>
+    </string-array>
+
+    <string-array name="voice_labels">
+        <item>01sahajimeru.wav</item>
+        <item>03syuuryou.wav</item>
+        <item>04oujougiwa.wav</item>
+        <item>05okazure.wav</item>
+        <item>06windowsazureha.wav</item>
+        <item>07azurenisite.wav</item>
+        <item>08windowsazure.wav</item>
+        <item>09cloudwoyoro.wav</item>
+        <item>10microsoft.wav</item>
+        <item>11mangadewakaru.wav</item>
+        <item>12sorenara.wav</item>
+        <item>13blue.wav</item>
+        <item>14azurenojituryoku.wav</item>
+        <item>16finiiish.wav</item>
+        <item>17goo.wav</item>
+        <item>18par.wav</item>
+        <item>19choki.wav</item>
+        <item>20aikogoo.wav</item>
+        <item>21aikopar.wav</item>
+        <item>22aikochoki.wav</item>
+        <item>27goodmorningazuresky.wav</item>
+        <item>28denwa.wav</item>
+        <item>29mail.wav</item>
+        <item>30start.wav</item>
+        <item>31deploykaishi.wav</item>
+        <item>32deploykanryo.wav</item>
+        <item>33build.wav</item>
+        <item>34sippai.wav</item>
+        <item>35daiseikou.wav</item>
+        <item>36ei.wav</item>
+        <item>37ah.wav</item>
+        <item>38otsukare.wav</item>
+        <item>39kokogapoint.wav</item>
+        <item>40chui.wav</item>
+    </string-array>
+</resources>
