@@ -1,76 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="voice_assets">
-        <item>01sahajimeru.wav</item>
-        <item>03syuuryou.wav</item>
-        <item>04oujougiwa.wav</item>
-        <item>05okazure.wav</item>
-        <item>06windowsazureha.wav</item>
-        <item>07azurenisite.wav</item>
-        <item>08windowsazure.wav</item>
-        <item>09cloudwoyoro.wav</item>
-        <item>10microsoft.wav</item>
-        <item>11mangadewakaru.wav</item>
-        <item>12sorenara.wav</item>
-        <item>13blue.wav</item>
-        <item>14azurenojituryoku.wav</item>
-        <item>16finiiish.wav</item>
-        <item>17goo.wav</item>
-        <item>18par.wav</item>
-        <item>19choki.wav</item>
-        <item>20aikogoo.wav</item>
-        <item>21aikopar.wav</item>
-        <item>22aikochoki.wav</item>
-        <item>27goodmorningazuresky.wav</item>
-        <item>28denwa.wav</item>
-        <item>29mail.wav</item>
-        <item>30start.wav</item>
-        <item>31deploykaishi.wav</item>
-        <item>32deploykanryo.wav</item>
-        <item>33build.wav</item>
-        <item>34sippai.wav</item>
-        <item>35daiseikou.wav</item>
-        <item>36ei.wav</item>
-        <item>37ah.wav</item>
-        <item>38otsukare.wav</item>
-        <item>39kokogapoint.wav</item>
-        <item>40chui.wav</item>
-    </string-array>
-
     <string-array name="voice_labels">
-        <item>01sahajimeru.wav</item>
-        <item>03syuuryou.wav</item>
-        <item>04oujougiwa.wav</item>
-        <item>05okazure.wav</item>
-        <item>06windowsazureha.wav</item>
-        <item>07azurenisite.wav</item>
-        <item>08windowsazure.wav</item>
-        <item>09cloudwoyoro.wav</item>
-        <item>10microsoft.wav</item>
-        <item>11mangadewakaru.wav</item>
-        <item>12sorenara.wav</item>
-        <item>13blue.wav</item>
-        <item>14azurenojituryoku.wav</item>
-        <item>16finiiish.wav</item>
-        <item>17goo.wav</item>
-        <item>18par.wav</item>
-        <item>19choki.wav</item>
-        <item>20aikogoo.wav</item>
-        <item>21aikopar.wav</item>
-        <item>22aikochoki.wav</item>
-        <item>27goodmorningazuresky.wav</item>
-        <item>28denwa.wav</item>
-        <item>29mail.wav</item>
-        <item>30start.wav</item>
-        <item>31deploykaishi.wav</item>
-        <item>32deploykanryo.wav</item>
-        <item>33build.wav</item>
-        <item>34sippai.wav</item>
-        <item>35daiseikou.wav</item>
-        <item>36ei.wav</item>
-        <item>37ah.wav</item>
-        <item>38otsukare.wav</item>
-        <item>39kokogapoint.wav</item>
-        <item>40chui.wav</item>
+        <item>さぁ、始めるわよ</item>
+        <item>終了～</item>
+        <item>往生際が悪いわよ</item>
+        <item>OK, Azure 今日もいい子ね</item>
+        <item>Windows Azure はわたしの、最高の友達</item>
+        <item>Azure にして後悔なんて、あるわけない</item>
+        <item>Windows Azure</item>
+        <item>クラウドをよろしくね</item>
+        <item>マイクロソフト</item>
+        <item>マンガでわかる Windows Azure プラットフォーム</item>
+        <item>それならウィンドウズ アジュールにすればいいじゃない</item>
+        <item>ブルー スクリーンみたいな顔色ネ</item>
+        <item>アジュールの実力はまだまだこんなモノじゃないワ!</item>
+        <item>Finiiiiiish</item>
+        <item>じゃんけん、グー</item>
+        <item>じゃんけん、パー</item>
+        <item>じゃんけん、チョキ</item>
+        <item>あいこで、グー</item>
+        <item>あいこで、パー</item>
+        <item>あいこで、チョキ</item>
+        <item>Good Morning Azure Sky!</item>
+        <item>電話が鳴ってる</item>
+        <item>メールが来たっ</item>
+        <item>スタート!</item>
+        <item>デプロイ開始!</item>
+        <item>デプロイ完了!</item>
+        <item>ビルド完了!</item>
+        <item>失敗しちゃった!</item>
+        <item>大成功!</item>
+        <item>エイッ!</item>
+        <item>きゃっ</item>
+        <item>お疲れ様♪</item>
+        <item>ここがポイント!</item>
+        <item>注意してね♪</item>
     </string-array>
 </resources>

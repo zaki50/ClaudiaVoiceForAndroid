@@ -3,7 +3,7 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent">
 	<ImageView android:id="@+id/background" android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:background="@android:color/white"
-		android:scaleType="fitCenter" />
+		android:scaleType="centerCrop" />
 	<ListView android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:id="@android:id/list"
 		android:background="#00000000" />
