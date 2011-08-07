@@ -16,8 +16,13 @@
 
 package org.zakky.cloudiavoice;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.app.ListActivity;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -35,19 +40,19 @@ import android.widget.ListView;
 public class MainActivity extends ListActivity {
 
     /**
-     * ポートレイト(縦長)モードの際に使用可能な背景画像リソースIDの配列です。
+     * ポートレイト(縦長)モードの際に使用可能な背景画像アセット名の配列です。
      */
-    private static final int[] BG_PORT = {
-            R.drawable.cloudia_port, R.drawable.cloudia_port_naname, R.drawable.cloudia_port_sd1,
-            R.drawable.cloudia_port_sd2, R.drawable.cloudia_port_sd3, R.drawable.cloudia_port_sd4,
-            R.drawable.cloudia_port_ushiro,
+    private static final String[] BG_PORT = {
+            "cloudia_port_sd1.jpg", "cloudia_port_sd2.jpg", "cloudia_port_sd3.jpg",
+            "cloudia_port_sd4.jpg", "cloudia_port_ushiro.jpg", "cloudia_port.jpg",
+            "cloudia_port_naname.jpg",
     };
 
     /**
-     * ランドスケープ(横長)モードの際に使用可能な背景画像リソースIDの配列です。
+     * ランドスケープ(横長)モードの際に使用可能な背景画像アセット名の配列です。
      */
-    private static final int[] BG_LAND = {
-            R.drawable.cloudia_land_desk, R.drawable.cloudia_land_salute,
+    private static final String[] BG_LAND = {
+            "cloudia_land_salute.jpg", "cloudia_land_desk.jpg",
     };
 
     /**
@@ -83,6 +88,11 @@ public class MainActivity extends ListActivity {
     private ImageView mBackground;
 
     /**
+     * 現在の背景イメージビットマップです。
+     */
+    private Bitmap mBackgroundBitmap;
+
+    /**
      * ボイス再生用のボイス再生用のプレーヤーです。
      */
     private MediaPlayer mPlayer;
@@ -116,20 +126,41 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        final int id = getNextBackground();
-        mBackground.setImageResource(id);
+        mBackground.setImageResource(R.drawable.dummy_bg);
+        if (mBackgroundBitmap != null) {
+            mBackgroundBitmap.recycle();
+            mBackgroundBitmap = null;
+        }
+
+        final String assetName = getNextBackground();
+        try {
+            final InputStream bgStream = getAssets().open(assetName);
+            try {
+                mBackgroundBitmap = BitmapFactory.decodeStream(bgStream);
+            } finally {
+                try {
+                    bgStream.close();
+                } catch (IOException e) {
+                    // ignore
+                    assert true;
+                }
+            }
+            mBackground.setImageBitmap(mBackgroundBitmap);
+        } catch (IOException e) {
+            throw new RuntimeException("failed to load background image: " + assetName, e);
+        }
     }
 
     /**
-     * 次に使用する背景画像のリソース ID を返します。
+     * 次に使用する背景画像のアセット名を返します。
      * 
      * <p>
      * 背景画像は、端末がポートレイトかランドスケープかを判定して、適切な値を返します。
      * </p>
      * @return
-     * 背景画像リーソースID。
+     * 背景画像アセット名。
      */
-    private int getNextBackground() {
+    private String getNextBackground() {
         if (isLandscapeMode()) {
             sBgIndexForLand++;
             if (BG_LAND.length <= sBgIndexForLand) {
@@ -153,7 +184,7 @@ public class MainActivity extends ListActivity {
             mPlayer.stop();
         }
         mPlayer = null;
-        
+
         mBackground.setImageBitmap(null);
     }
 
