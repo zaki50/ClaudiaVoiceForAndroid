@@ -18,7 +18,6 @@ package org.zakky.cloudiavoice;
 
 import android.app.ListActivity;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -102,9 +101,6 @@ public class MainActivity extends ListActivity {
         setListAdapter(adapter);
 
         final ListView lv = getListView();
-        // リストを透過させ、背後の画像を見えるようにする。
-        // TODO レイアウトで指定するように変更する
-        lv.setCacheColorHint(Color.TRANSPARENT);
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
