@@ -25,7 +25,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -122,12 +121,6 @@ public class MainActivity extends ListActivity {
                 }
                 mPlayer = MediaPlayer.create(MainActivity.this, VOICES[position]);
                 mPlayer.start();
-                mPlayer.setOnCompletionListener(new OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        mp.release();
-                    }
-                });
             }
         });
         // このアクティビティ表示中はボリュームキーでメディアの音量が変わるようにする
