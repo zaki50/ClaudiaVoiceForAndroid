@@ -1,0 +1,19 @@
+org.zakky.claudiavoice.MainActivity -> org.zakky.claudiavoice.MainActivity:
+    java.lang.String[] BG_PORT -> a
+    java.lang.String[] BG_LAND -> b
+    int sBgIndexForPort -> c
+    int sBgIndexForLand -> d
+    int[] VOICES -> e
+    android.widget.ImageView mBackground -> f
+    android.graphics.Bitmap mBackgroundBitmap -> g
+    android.media.MediaPlayer mPlayer -> h
+    boolean $assertionsDisabled -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    void onStart() -> onStart
+    void onStop() -> onStop
+    android.media.MediaPlayer access$0(org.zakky.claudiavoice.MainActivity) -> a
+    int[] access$1() -> a
+    void access$2(org.zakky.claudiavoice.MainActivity,android.media.MediaPlayer) -> a
+org.zakky.claudiavoice.MainActivity$1 -> org.zakky.claudiavoice.a:
+    org.zakky.claudiavoice.MainActivity this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick

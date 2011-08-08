@@ -1,0 +1,9 @@
+org.zakky.claudiavoice.R
+org.zakky.claudiavoice.R$array
+org.zakky.claudiavoice.R$attr
+org.zakky.claudiavoice.R$drawable
+org.zakky.claudiavoice.R$id
+org.zakky.claudiavoice.R$layout
+org.zakky.claudiavoice.R$raw
+org.zakky.claudiavoice.R$string
+org.zakky.claudiavoice.R$style

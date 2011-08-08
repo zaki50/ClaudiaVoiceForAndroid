@@ -1,0 +1,1000 @@
+_____________________________________________________________________
++ Program class: org/zakky/claudiavoice/a
+  Superclass:    java/lang/Object
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x30
+    = final class org.zakky.claudiavoice.a extends java.lang.Object
+
+Interfaces (count = 1):
+  - Class [android/widget/AdapterView$OnItemClickListener]
+
+Constant Pool (count = 48):
+  - Class [android/media/MediaPlayer]
+  - Class [android/widget/AdapterView]
+  - Class [android/widget/AdapterView$OnItemClickListener]
+  - Class [java/lang/Object]
+  - Class [org/zakky/claudiavoice/MainActivity]
+  - Class [org/zakky/claudiavoice/a]
+  - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+  - Methodref [android/media/MediaPlayer.create (Landroid/content/Context;I)Landroid/media/MediaPlayer;]
+  - Methodref [android/media/MediaPlayer.release ()V]
+  - Methodref [android/media/MediaPlayer.start ()V]
+  - Methodref [android/media/MediaPlayer.stop ()V]
+  - Methodref [java/lang/Object.<init> ()V]
+  - Methodref [org/zakky/claudiavoice/MainActivity.a ()[I]
+  - Methodref [org/zakky/claudiavoice/MainActivity.a (Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+  - Methodref [org/zakky/claudiavoice/MainActivity.a (Lorg/zakky/claudiavoice/MainActivity;Landroid/media/MediaPlayer;)V]
+  + NameAndType [<init> ()V]
+  + NameAndType [a ()[I]
+  + NameAndType [a (Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+  + NameAndType [a (Lorg/zakky/claudiavoice/MainActivity;Landroid/media/MediaPlayer;)V]
+  + NameAndType [a Lorg/zakky/claudiavoice/MainActivity;]
+  + NameAndType [create (Landroid/content/Context;I)Landroid/media/MediaPlayer;]
+  + NameAndType [release ()V]
+  + NameAndType [start ()V]
+  + NameAndType [stop ()V]
+  + Utf8 [()V]
+  + Utf8 [()[I]
+  + Utf8 [(Landroid/content/Context;I)Landroid/media/MediaPlayer;]
+  + Utf8 [(Landroid/widget/AdapterView;Landroid/view/View;IJ)V]
+  + Utf8 [(Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+  + Utf8 [(Lorg/zakky/claudiavoice/MainActivity;)V]
+  + Utf8 [(Lorg/zakky/claudiavoice/MainActivity;Landroid/media/MediaPlayer;)V]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [Lorg/zakky/claudiavoice/MainActivity;]
+  + Utf8 [StackMapTable]
+  + Utf8 [a]
+  + Utf8 [android/media/MediaPlayer]
+  + Utf8 [android/widget/AdapterView]
+  + Utf8 [android/widget/AdapterView$OnItemClickListener]
+  + Utf8 [create]
+  + Utf8 [java/lang/Object]
+  + Utf8 [onItemClick]
+  + Utf8 [org/zakky/claudiavoice/MainActivity]
+  + Utf8 [org/zakky/claudiavoice/a]
+  + Utf8 [release]
+  + Utf8 [start]
+  + Utf8 [stop]
+
+Fields (count = 1):
+  + Field:        a Lorg/zakky/claudiavoice/MainActivity;
+    Access flags: 0x1002
+      = private org.zakky.claudiavoice.MainActivity a
+
+Methods (count = 2):
+  - Method:       <init>(Lorg/zakky/claudiavoice/MainActivity;)V
+    Access flags: 0x0
+      = a(org.zakky.claudiavoice.MainActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #7
+        - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+      [5] aload_0 v0
+      [6] invokespecial #12
+        - Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    Access flags: 0x11
+      = public final void onItemClick(android.widget.AdapterView,android.view.View,int,long)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 60, locals = 6, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #7
+        - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+      [4] invokestatic #14
+        - Methodref [org/zakky/claudiavoice/MainActivity.a (Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+      [7] ifnull +23 (target=30)
+      [10] aload_0 v0
+      [11] getfield #7
+        - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+      [14] invokestatic #14
+        - Methodref [org/zakky/claudiavoice/MainActivity.a (Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+      [17] invokevirtual #11
+        - Methodref [android/media/MediaPlayer.stop ()V]
+      [20] aload_0 v0
+      [21] getfield #7
+        - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+      [24] invokestatic #14
+        - Methodref [org/zakky/claudiavoice/MainActivity.a (Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+      [27] invokevirtual #9
+        - Methodref [android/media/MediaPlayer.release ()V]
+      [30] aload_0 v0
+      [31] getfield #7
+        - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+      [34] aload_0 v0
+      [35] getfield #7
+        - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+      [38] invokestatic #13
+        - Methodref [org/zakky/claudiavoice/MainActivity.a ()[I]
+      [41] iload_3 v3
+      [42] iaload
+      [43] invokestatic #8
+        - Methodref [android/media/MediaPlayer.create (Landroid/content/Context;I)Landroid/media/MediaPlayer;]
+      [46] invokestatic #15
+        - Methodref [org/zakky/claudiavoice/MainActivity.a (Lorg/zakky/claudiavoice/MainActivity;Landroid/media/MediaPlayer;)V]
+      [49] aload_0 v0
+      [50] getfield #7
+        - Fieldref [org/zakky/claudiavoice/a.a Lorg/zakky/claudiavoice/MainActivity;]
+      [53] invokestatic #14
+        - Methodref [org/zakky/claudiavoice/MainActivity.a (Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+      [56] invokevirtual #10
+        - Methodref [android/media/MediaPlayer.start ()V]
+      [59] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [30] Var: ..., Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: org/zakky/claudiavoice/MainActivity
+  Superclass:    android/app/ListActivity
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class org.zakky.claudiavoice.MainActivity extends android.app.ListActivity
+
+Interfaces (count = 0):
+
+Constant Pool (count = 250):
+  - Integer [2130837504]
+  - Integer [2130903040]
+  - Integer [2130903041]
+  - Integer [2130968576]
+  - Integer [2130968577]
+  - Integer [2130968578]
+  - Integer [2130968579]
+  - Integer [2130968580]
+  - Integer [2130968581]
+  - Integer [2130968582]
+  - Integer [2130968583]
+  - Integer [2130968584]
+  - Integer [2130968585]
+  - Integer [2130968586]
+  - Integer [2130968587]
+  - Integer [2130968588]
+  - Integer [2130968589]
+  - Integer [2130968590]
+  - Integer [2130968591]
+  - Integer [2130968592]
+  - Integer [2130968593]
+  - Integer [2130968594]
+  - Integer [2130968595]
+  - Integer [2130968596]
+  - Integer [2130968597]
+  - Integer [2130968598]
+  - Integer [2130968599]
+  - Integer [2130968600]
+  - Integer [2130968601]
+  - Integer [2130968602]
+  - Integer [2130968603]
+  - Integer [2130968604]
+  - Integer [2130968605]
+  - Integer [2130968606]
+  - Integer [2130968607]
+  - Integer [2130968608]
+  - Integer [2130968609]
+  - Integer [2131165184]
+  - Integer [2131230720]
+  - String [claudia_land_desk.jpg]
+  - String [claudia_land_salute.jpg]
+  - String [claudia_port.jpg]
+  - String [claudia_port_naname.jpg]
+  - String [claudia_port_sd1.jpg]
+  - String [claudia_port_sd2.jpg]
+  - String [claudia_port_sd3.jpg]
+  - String [claudia_port_sd4.jpg]
+  - String [claudia_port_ushiro.jpg]
+  - String [failed to load background image: ]
+  - Class [[Ljava/lang/String;]
+  - Class [android/app/ListActivity]
+  - Class [android/content/res/AssetManager]
+  - Class [android/content/res/Configuration]
+  - Class [android/content/res/Resources]
+  - Class [android/graphics/Bitmap]
+  - Class [android/graphics/BitmapFactory]
+  - Class [android/media/MediaPlayer]
+  - Class [android/widget/AdapterView]
+  - Class [android/widget/AdapterView$OnItemClickListener]
+  - Class [android/widget/ArrayAdapter]
+  - Class [android/widget/ImageView]
+  - Class [android/widget/ListView]
+  - Class [java/io/IOException]
+  - Class [java/io/InputStream]
+  - Class [java/lang/AssertionError]
+  - Class [java/lang/Class]
+  - Class [java/lang/RuntimeException]
+  - Class [java/lang/String]
+  - Class [java/lang/StringBuilder]
+  - Class [java/lang/Throwable]
+  - Class [org/zakky/claudiavoice/MainActivity]
+  - Class [org/zakky/claudiavoice/a]
+  - Fieldref [android/content/res/Configuration.orientation I]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.a [Ljava/lang/String;]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.b [Ljava/lang/String;]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.c I]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.d I]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.e [I]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.f Landroid/widget/ImageView;]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.g Landroid/graphics/Bitmap;]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.h Landroid/media/MediaPlayer;]
+  - Fieldref [org/zakky/claudiavoice/MainActivity.i Z]
+  - Methodref [android/app/ListActivity.<init> ()V]
+  - Methodref [android/app/ListActivity.onCreate (Landroid/os/Bundle;)V]
+  - Methodref [android/app/ListActivity.onStart ()V]
+  - Methodref [android/app/ListActivity.onStop ()V]
+  - Methodref [android/content/res/AssetManager.open (Ljava/lang/String;)Ljava/io/InputStream;]
+  - Methodref [android/content/res/Resources.getConfiguration ()Landroid/content/res/Configuration;]
+  - Methodref [android/content/res/Resources.getStringArray (I)[Ljava/lang/String;]
+  - Methodref [android/graphics/Bitmap.recycle ()V]
+  - Methodref [android/graphics/BitmapFactory.decodeStream (Ljava/io/InputStream;)Landroid/graphics/Bitmap;]
+  - Methodref [android/media/MediaPlayer.stop ()V]
+  - Methodref [android/widget/ArrayAdapter.<init> (Landroid/content/Context;I[Ljava/lang/Object;)V]
+  - Methodref [android/widget/ImageView.setImageBitmap (Landroid/graphics/Bitmap;)V]
+  - Methodref [android/widget/ImageView.setImageResource (I)V]
+  - Methodref [android/widget/ListView.setOnItemClickListener (Landroid/widget/AdapterView$OnItemClickListener;)V]
+  - Methodref [java/io/InputStream.close ()V]
+  - Methodref [java/lang/AssertionError.<init> ()V]
+  - Methodref [java/lang/Class.desiredAssertionStatus ()Z]
+  - Methodref [java/lang/RuntimeException.<init> (Ljava/lang/String;Ljava/lang/Throwable;)V]
+  - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  - Methodref [org/zakky/claudiavoice/MainActivity.findViewById (I)Landroid/view/View;]
+  - Methodref [org/zakky/claudiavoice/MainActivity.getAssets ()Landroid/content/res/AssetManager;]
+  - Methodref [org/zakky/claudiavoice/MainActivity.getListView ()Landroid/widget/ListView;]
+  - Methodref [org/zakky/claudiavoice/MainActivity.getResources ()Landroid/content/res/Resources;]
+  - Methodref [org/zakky/claudiavoice/MainActivity.setContentView (I)V]
+  - Methodref [org/zakky/claudiavoice/MainActivity.setListAdapter (Landroid/widget/ListAdapter;)V]
+  - Methodref [org/zakky/claudiavoice/MainActivity.setVolumeControlStream (I)V]
+  - Methodref [org/zakky/claudiavoice/a.<init> (Lorg/zakky/claudiavoice/MainActivity;)V]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Landroid/content/Context;I[Ljava/lang/Object;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
+  + NameAndType [<init> (Ljava/lang/String;Ljava/lang/Throwable;)V]
+  + NameAndType [<init> (Lorg/zakky/claudiavoice/MainActivity;)V]
+  + NameAndType [a [Ljava/lang/String;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b [Ljava/lang/String;]
+  + NameAndType [c I]
+  + NameAndType [close ()V]
+  + NameAndType [d I]
+  + NameAndType [decodeStream (Ljava/io/InputStream;)Landroid/graphics/Bitmap;]
+  + NameAndType [desiredAssertionStatus ()Z]
+  + NameAndType [e [I]
+  + NameAndType [f Landroid/widget/ImageView;]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [g Landroid/graphics/Bitmap;]
+  + NameAndType [getAssets ()Landroid/content/res/AssetManager;]
+  + NameAndType [getConfiguration ()Landroid/content/res/Configuration;]
+  + NameAndType [getListView ()Landroid/widget/ListView;]
+  + NameAndType [getResources ()Landroid/content/res/Resources;]
+  + NameAndType [getStringArray (I)[Ljava/lang/String;]
+  + NameAndType [h Landroid/media/MediaPlayer;]
+  + NameAndType [i Z]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [onStart ()V]
+  + NameAndType [onStop ()V]
+  + NameAndType [open (Ljava/lang/String;)Ljava/io/InputStream;]
+  + NameAndType [orientation I]
+  + NameAndType [recycle ()V]
+  + NameAndType [setContentView (I)V]
+  + NameAndType [setImageBitmap (Landroid/graphics/Bitmap;)V]
+  + NameAndType [setImageResource (I)V]
+  + NameAndType [setListAdapter (Landroid/widget/ListAdapter;)V]
+  + NameAndType [setOnItemClickListener (Landroid/widget/AdapterView$OnItemClickListener;)V]
+  + NameAndType [setVolumeControlStream (I)V]
+  + NameAndType [stop ()V]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + Utf8 [()Landroid/content/res/AssetManager;]
+  + Utf8 [()Landroid/content/res/Configuration;]
+  + Utf8 [()Landroid/content/res/Resources;]
+  + Utf8 [()Landroid/widget/ListView;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [()[I]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)V]
+  + Utf8 [(I)[Ljava/lang/String;]
+  + Utf8 [(Landroid/content/Context;I[Ljava/lang/Object;)V]
+  + Utf8 [(Landroid/graphics/Bitmap;)V]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/widget/AdapterView$OnItemClickListener;)V]
+  + Utf8 [(Landroid/widget/ListAdapter;)V]
+  + Utf8 [(Ljava/io/InputStream;)Landroid/graphics/Bitmap;]
+  + Utf8 [(Ljava/lang/String;)Ljava/io/InputStream;]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [(Ljava/lang/String;)V]
+  + Utf8 [(Ljava/lang/String;Ljava/lang/Throwable;)V]
+  + Utf8 [(Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;]
+  + Utf8 [(Lorg/zakky/claudiavoice/MainActivity;)V]
+  + Utf8 [(Lorg/zakky/claudiavoice/MainActivity;Landroid/media/MediaPlayer;)V]
+  + Utf8 [<clinit>]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Landroid/graphics/Bitmap;]
+  + Utf8 [Landroid/media/MediaPlayer;]
+  + Utf8 [Landroid/widget/ImageView;]
+  + Utf8 [StackMapTable]
+  + Utf8 [Z]
+  + Utf8 [[I]
+  + Utf8 [[Ljava/lang/String;]
+  + Utf8 [a]
+  + Utf8 [android/app/ListActivity]
+  + Utf8 [android/content/res/AssetManager]
+  + Utf8 [android/content/res/Configuration]
+  + Utf8 [android/content/res/Resources]
+  + Utf8 [android/graphics/Bitmap]
+  + Utf8 [android/graphics/BitmapFactory]
+  + Utf8 [android/media/MediaPlayer]
+  + Utf8 [android/widget/AdapterView]
+  + Utf8 [android/widget/AdapterView$OnItemClickListener]
+  + Utf8 [android/widget/ArrayAdapter]
+  + Utf8 [android/widget/ImageView]
+  + Utf8 [android/widget/ListView]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [claudia_land_desk.jpg]
+  + Utf8 [claudia_land_salute.jpg]
+  + Utf8 [claudia_port.jpg]
+  + Utf8 [claudia_port_naname.jpg]
+  + Utf8 [claudia_port_sd1.jpg]
+  + Utf8 [claudia_port_sd2.jpg]
+  + Utf8 [claudia_port_sd3.jpg]
+  + Utf8 [claudia_port_sd4.jpg]
+  + Utf8 [claudia_port_ushiro.jpg]
+  + Utf8 [close]
+  + Utf8 [d]
+  + Utf8 [decodeStream]
+  + Utf8 [desiredAssertionStatus]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [failed to load background image: ]
+  + Utf8 [findViewById]
+  + Utf8 [g]
+  + Utf8 [getAssets]
+  + Utf8 [getConfiguration]
+  + Utf8 [getListView]
+  + Utf8 [getResources]
+  + Utf8 [getStringArray]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [java/io/IOException]
+  + Utf8 [java/io/InputStream]
+  + Utf8 [java/lang/AssertionError]
+  + Utf8 [java/lang/Class]
+  + Utf8 [java/lang/RuntimeException]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/lang/Throwable]
+  + Utf8 [onCreate]
+  + Utf8 [onStart]
+  + Utf8 [onStop]
+  + Utf8 [open]
+  + Utf8 [org/zakky/claudiavoice/MainActivity]
+  + Utf8 [org/zakky/claudiavoice/a]
+  + Utf8 [orientation]
+  + Utf8 [recycle]
+  + Utf8 [setContentView]
+  + Utf8 [setImageBitmap]
+  + Utf8 [setImageResource]
+  + Utf8 [setListAdapter]
+  + Utf8 [setOnItemClickListener]
+  + Utf8 [setVolumeControlStream]
+  + Utf8 [stop]
+  + Utf8 [toString]
+
+Fields (count = 9):
+  + Field:        a [Ljava/lang/String;
+    Access flags: 0x1a
+      = private static final java.lang.String[] a
+  + Field:        b [Ljava/lang/String;
+    Access flags: 0x1a
+      = private static final java.lang.String[] b
+  + Field:        c I
+    Access flags: 0xa
+      = private static int c
+  + Field:        d I
+    Access flags: 0xa
+      = private static int d
+  + Field:        e [I
+    Access flags: 0x1a
+      = private static final int[] e
+  + Field:        f Landroid/widget/ImageView;
+    Access flags: 0x2
+      = private android.widget.ImageView f
+  + Field:        g Landroid/graphics/Bitmap;
+    Access flags: 0x2
+      = private android.graphics.Bitmap g
+  + Field:        h Landroid/media/MediaPlayer;
+    Access flags: 0x2
+      = private android.media.MediaPlayer h
+  + Field:        i Z
+    Access flags: 0x100a
+      = private static boolean i
+
+Methods (count = 8):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 291, locals = 0, stack = 4):
+      [0] ldc #71
+        - Class [org/zakky/claudiavoice/MainActivity]
+      [2] invokevirtual #99
+        - Methodref [java/lang/Class.desiredAssertionStatus ()Z]
+      [5] ifne +7 (target=12)
+      [8] iconst_1
+      [9] goto +4 (target=13)
+      [12] iconst_0
+      [13] putstatic #82
+        - Fieldref [org/zakky/claudiavoice/MainActivity.i Z]
+      [16] bipush 7
+      [18] anewarray #68
+        - Class [java/lang/String]
+      [21] dup
+      [22] iconst_0
+      [23] ldc #44
+        - String [claudia_port_sd1.jpg]
+      [25] aastore
+      [26] dup
+      [27] iconst_1
+      [28] ldc #45
+        - String [claudia_port_sd2.jpg]
+      [30] aastore
+      [31] dup
+      [32] iconst_2
+      [33] ldc #46
+        - String [claudia_port_sd3.jpg]
+      [35] aastore
+      [36] dup
+      [37] iconst_3
+      [38] ldc #47
+        - String [claudia_port_sd4.jpg]
+      [40] aastore
+      [41] dup
+      [42] iconst_4
+      [43] ldc #48
+        - String [claudia_port_ushiro.jpg]
+      [45] aastore
+      [46] dup
+      [47] iconst_5
+      [48] ldc #42
+        - String [claudia_port.jpg]
+      [50] aastore
+      [51] dup
+      [52] bipush 6
+      [54] ldc #43
+        - String [claudia_port_naname.jpg]
+      [56] aastore
+      [57] putstatic #74
+        - Fieldref [org/zakky/claudiavoice/MainActivity.a [Ljava/lang/String;]
+      [60] iconst_2
+      [61] anewarray #68
+        - Class [java/lang/String]
+      [64] dup
+      [65] iconst_0
+      [66] ldc #41
+        - String [claudia_land_salute.jpg]
+      [68] aastore
+      [69] dup
+      [70] iconst_1
+      [71] ldc #40
+        - String [claudia_land_desk.jpg]
+      [73] aastore
+      [74] putstatic #75
+        - Fieldref [org/zakky/claudiavoice/MainActivity.b [Ljava/lang/String;]
+      [77] iconst_m1
+      [78] putstatic #76
+        - Fieldref [org/zakky/claudiavoice/MainActivity.c I]
+      [81] iconst_m1
+      [82] putstatic #77
+        - Fieldref [org/zakky/claudiavoice/MainActivity.d I]
+      [85] bipush 34
+      [87] newarray 10
+      [89] dup
+      [90] iconst_0
+      [91] ldc #4
+        - Integer [2130968576]
+      [93] iastore
+      [94] dup
+      [95] iconst_1
+      [96] ldc #5
+        - Integer [2130968577]
+      [98] iastore
+      [99] dup
+      [100] iconst_2
+      [101] ldc #6
+        - Integer [2130968578]
+      [103] iastore
+      [104] dup
+      [105] iconst_3
+      [106] ldc #7
+        - Integer [2130968579]
+      [108] iastore
+      [109] dup
+      [110] iconst_4
+      [111] ldc #8
+        - Integer [2130968580]
+      [113] iastore
+      [114] dup
+      [115] iconst_5
+      [116] ldc #9
+        - Integer [2130968581]
+      [118] iastore
+      [119] dup
+      [120] bipush 6
+      [122] ldc #10
+        - Integer [2130968582]
+      [124] iastore
+      [125] dup
+      [126] bipush 7
+      [128] ldc #11
+        - Integer [2130968583]
+      [130] iastore
+      [131] dup
+      [132] bipush 8
+      [134] ldc #12
+        - Integer [2130968584]
+      [136] iastore
+      [137] dup
+      [138] bipush 9
+      [140] ldc #13
+        - Integer [2130968585]
+      [142] iastore
+      [143] dup
+      [144] bipush 10
+      [146] ldc #14
+        - Integer [2130968586]
+      [148] iastore
+      [149] dup
+      [150] bipush 11
+      [152] ldc #15
+        - Integer [2130968587]
+      [154] iastore
+      [155] dup
+      [156] bipush 12
+      [158] ldc #16
+        - Integer [2130968588]
+      [160] iastore
+      [161] dup
+      [162] bipush 13
+      [164] ldc #17
+        - Integer [2130968589]
+      [166] iastore
+      [167] dup
+      [168] bipush 14
+      [170] ldc #18
+        - Integer [2130968590]
+      [172] iastore
+      [173] dup
+      [174] bipush 15
+      [176] ldc #19
+        - Integer [2130968591]
+      [178] iastore
+      [179] dup
+      [180] bipush 16
+      [182] ldc #20
+        - Integer [2130968592]
+      [184] iastore
+      [185] dup
+      [186] bipush 17
+      [188] ldc #21
+        - Integer [2130968593]
+      [190] iastore
+      [191] dup
+      [192] bipush 18
+      [194] ldc #22
+        - Integer [2130968594]
+      [196] iastore
+      [197] dup
+      [198] bipush 19
+      [200] ldc #23
+        - Integer [2130968595]
+      [202] iastore
+      [203] dup
+      [204] bipush 20
+      [206] ldc #24
+        - Integer [2130968596]
+      [208] iastore
+      [209] dup
+      [210] bipush 21
+      [212] ldc #25
+        - Integer [2130968597]
+      [214] iastore
+      [215] dup
+      [216] bipush 22
+      [218] ldc #26
+        - Integer [2130968598]
+      [220] iastore
+      [221] dup
+      [222] bipush 23
+      [224] ldc #27
+        - Integer [2130968599]
+      [226] iastore
+      [227] dup
+      [228] bipush 24
+      [230] ldc #28
+        - Integer [2130968600]
+      [232] iastore
+      [233] dup
+      [234] bipush 25
+      [236] ldc #29
+        - Integer [2130968601]
+      [238] iastore
+      [239] dup
+      [240] bipush 26
+      [242] ldc #30
+        - Integer [2130968602]
+      [244] iastore
+      [245] dup
+      [246] bipush 27
+      [248] ldc #31
+        - Integer [2130968603]
+      [250] iastore
+      [251] dup
+      [252] bipush 28
+      [254] ldc #32
+        - Integer [2130968604]
+      [256] iastore
+      [257] dup
+      [258] bipush 29
+      [260] ldc #33
+        - Integer [2130968605]
+      [262] iastore
+      [263] dup
+      [264] bipush 30
+      [266] ldc #34
+        - Integer [2130968606]
+      [268] iastore
+      [269] dup
+      [270] bipush 31
+      [272] ldc #35
+        - Integer [2130968607]
+      [274] iastore
+      [275] dup
+      [276] bipush 32
+      [278] ldc #36
+        - Integer [2130968608]
+      [280] iastore
+      [281] dup
+      [282] bipush 33
+      [284] ldc #37
+        - Integer [2130968609]
+      [286] iastore
+      [287] putstatic #78
+        - Fieldref [org/zakky/claudiavoice/MainActivity.e [I]
+      [290] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [12] Var: ..., Stack: (empty)
+        - [13] Var: ..., Stack: [i]
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public MainActivity()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #83
+        - Methodref [android/app/ListActivity.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 95, locals = 2, stack = 5):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #84
+        - Methodref [android/app/ListActivity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] ldc #2
+        - Integer [2130903040]
+      [8] invokevirtual #108
+        - Methodref [org/zakky/claudiavoice/MainActivity.setContentView (I)V]
+      [11] aload_0 v0
+      [12] aload_0 v0
+      [13] ldc #39
+        - Integer [2131230720]
+      [15] invokevirtual #104
+        - Methodref [org/zakky/claudiavoice/MainActivity.findViewById (I)Landroid/view/View;]
+      [18] checkcast #61
+        - Class [android/widget/ImageView]
+      [21] putfield #79
+        - Fieldref [org/zakky/claudiavoice/MainActivity.f Landroid/widget/ImageView;]
+      [24] aload_0 v0
+      [25] invokevirtual #107
+        - Methodref [org/zakky/claudiavoice/MainActivity.getResources ()Landroid/content/res/Resources;]
+      [28] ldc #38
+        - Integer [2131165184]
+      [30] invokevirtual #89
+        - Methodref [android/content/res/Resources.getStringArray (I)[Ljava/lang/String;]
+      [33] astore_1 v1
+      [34] getstatic #82
+        - Fieldref [org/zakky/claudiavoice/MainActivity.i Z]
+      [37] ifne +20 (target=57)
+      [40] aload_1 v1
+      [41] arraylength
+      [42] getstatic #78
+        - Fieldref [org/zakky/claudiavoice/MainActivity.e [I]
+      [45] arraylength
+      [46] ificmpeq +11 (target=57)
+      [49] new #65
+        - Class [java/lang/AssertionError]
+      [52] dup
+      [53] invokespecial #98
+        - Methodref [java/lang/AssertionError.<init> ()V]
+      [56] athrow
+      [57] new #60
+        - Class [android/widget/ArrayAdapter]
+      [60] dup
+      [61] aload_0 v0
+      [62] ldc #3
+        - Integer [2130903041]
+      [64] aload_1 v1
+      [65] invokespecial #93
+        - Methodref [android/widget/ArrayAdapter.<init> (Landroid/content/Context;I[Ljava/lang/Object;)V]
+      [68] astore_1 v1
+      [69] aload_0 v0
+      [70] aload_1 v1
+      [71] invokevirtual #109
+        - Methodref [org/zakky/claudiavoice/MainActivity.setListAdapter (Landroid/widget/ListAdapter;)V]
+      [74] aload_0 v0
+      [75] invokevirtual #106
+        - Methodref [org/zakky/claudiavoice/MainActivity.getListView ()Landroid/widget/ListView;]
+      [78] new #72
+        - Class [org/zakky/claudiavoice/a]
+      [81] dup
+      [82] aload_0 v0
+      [83] invokespecial #111
+        - Methodref [org/zakky/claudiavoice/a.<init> (Lorg/zakky/claudiavoice/MainActivity;)V]
+      [86] invokevirtual #96
+        - Methodref [android/widget/ListView.setOnItemClickListener (Landroid/widget/AdapterView$OnItemClickListener;)V]
+      [89] aload_0 v0
+      [90] iconst_3
+      [91] invokevirtual #110
+        - Methodref [org/zakky/claudiavoice/MainActivity.setVolumeControlStream (I)V]
+      [94] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [57] Var: ...[a:[Ljava/lang/String;], Stack: (empty)
+  + Method:       onStart()V
+    Access flags: 0x4
+      = protected void onStart()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 193, locals = 4, stack = 5):
+      [0] aload_0 v0
+      [1] invokespecial #85
+        - Methodref [android/app/ListActivity.onStart ()V]
+      [4] aload_0 v0
+      [5] getfield #79
+        - Fieldref [org/zakky/claudiavoice/MainActivity.f Landroid/widget/ImageView;]
+      [8] ldc #1
+        - Integer [2130837504]
+      [10] invokevirtual #95
+        - Methodref [android/widget/ImageView.setImageResource (I)V]
+      [13] aload_0 v0
+      [14] getfield #80
+        - Fieldref [org/zakky/claudiavoice/MainActivity.g Landroid/graphics/Bitmap;]
+      [17] ifnull +15 (target=32)
+      [20] aload_0 v0
+      [21] getfield #80
+        - Fieldref [org/zakky/claudiavoice/MainActivity.g Landroid/graphics/Bitmap;]
+      [24] invokevirtual #90
+        - Methodref [android/graphics/Bitmap.recycle ()V]
+      [27] aload_0 v0
+      [28] aconst_null
+      [29] putfield #80
+        - Fieldref [org/zakky/claudiavoice/MainActivity.g Landroid/graphics/Bitmap;]
+      [32] aload_0 v0
+      [33] invokevirtual #107
+        - Methodref [org/zakky/claudiavoice/MainActivity.getResources ()Landroid/content/res/Resources;]
+      [36] invokevirtual #88
+        - Methodref [android/content/res/Resources.getConfiguration ()Landroid/content/res/Configuration;]
+      [39] getfield #73
+        - Fieldref [android/content/res/Configuration.orientation I]
+      [42] iconst_2
+      [43] ificmpne +7 (target=50)
+      [46] iconst_1
+      [47] goto +4 (target=51)
+      [50] iconst_0
+      [51] ifeq +35 (target=86)
+      [54] getstatic #77
+        - Fieldref [org/zakky/claudiavoice/MainActivity.d I]
+      [57] iconst_1
+      [58] iadd
+      [59] putstatic #77
+        - Fieldref [org/zakky/claudiavoice/MainActivity.d I]
+      [62] getstatic #75
+        - Fieldref [org/zakky/claudiavoice/MainActivity.b [Ljava/lang/String;]
+      [65] arraylength
+      [66] getstatic #77
+        - Fieldref [org/zakky/claudiavoice/MainActivity.d I]
+      [69] ificmpgt +7 (target=76)
+      [72] iconst_0
+      [73] putstatic #77
+        - Fieldref [org/zakky/claudiavoice/MainActivity.d I]
+      [76] getstatic #75
+        - Fieldref [org/zakky/claudiavoice/MainActivity.b [Ljava/lang/String;]
+      [79] getstatic #77
+        - Fieldref [org/zakky/claudiavoice/MainActivity.d I]
+      [82] aaload
+      [83] goto +32 (target=115)
+      [86] getstatic #76
+        - Fieldref [org/zakky/claudiavoice/MainActivity.c I]
+      [89] iconst_1
+      [90] iadd
+      [91] putstatic #76
+        - Fieldref [org/zakky/claudiavoice/MainActivity.c I]
+      [94] getstatic #74
+        - Fieldref [org/zakky/claudiavoice/MainActivity.a [Ljava/lang/String;]
+      [97] arraylength
+      [98] getstatic #76
+        - Fieldref [org/zakky/claudiavoice/MainActivity.c I]
+      [101] ificmpgt +7 (target=108)
+      [104] iconst_0
+      [105] putstatic #76
+        - Fieldref [org/zakky/claudiavoice/MainActivity.c I]
+      [108] getstatic #74
+        - Fieldref [org/zakky/claudiavoice/MainActivity.a [Ljava/lang/String;]
+      [111] getstatic #76
+        - Fieldref [org/zakky/claudiavoice/MainActivity.c I]
+      [114] aaload
+      [115] astore_1 v1
+      [116] aload_0 v0
+      [117] invokevirtual #105
+        - Methodref [org/zakky/claudiavoice/MainActivity.getAssets ()Landroid/content/res/AssetManager;]
+      [120] aload_1 v1
+      [121] invokevirtual #87
+        - Methodref [android/content/res/AssetManager.open (Ljava/lang/String;)Ljava/io/InputStream;]
+      [124] astore_2 v2
+      [125] aload_0 v0
+      [126] aload_2 v2
+      [127] invokestatic #91
+        - Methodref [android/graphics/BitmapFactory.decodeStream (Ljava/io/InputStream;)Landroid/graphics/Bitmap;]
+      [130] putfield #80
+        - Fieldref [org/zakky/claudiavoice/MainActivity.g Landroid/graphics/Bitmap;]
+      [133] goto +14 (target=147)
+      [136] astore_3 v3
+      [137] aload_2 v2
+      [138] invokevirtual #97
+        - Methodref [java/io/InputStream.close ()V]
+      [141] goto +4 (target=145)
+      [144] pop
+      [145] aload_3 v3
+      [146] athrow
+      [147] aload_2 v2
+      [148] invokevirtual #97
+        - Methodref [java/io/InputStream.close ()V]
+      [151] goto +4 (target=155)
+      [154] pop
+      [155] aload_0 v0
+      [156] getfield #79
+        - Fieldref [org/zakky/claudiavoice/MainActivity.f Landroid/widget/ImageView;]
+      [159] aload_0 v0
+      [160] getfield #80
+        - Fieldref [org/zakky/claudiavoice/MainActivity.g Landroid/graphics/Bitmap;]
+      [163] invokevirtual #94
+        - Methodref [android/widget/ImageView.setImageBitmap (Landroid/graphics/Bitmap;)V]
+      [166] return
+      [167] astore_2 v2
+      [168] new #67
+        - Class [java/lang/RuntimeException]
+      [171] dup
+      [172] new #69
+        - Class [java/lang/StringBuilder]
+      [175] dup
+      [176] ldc #49
+        - String [failed to load background image: ]
+      [178] invokespecial #101
+        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [181] aload_1 v1
+      [182] invokevirtual #102
+        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [185] invokevirtual #103
+        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [188] aload_2 v2
+      [189] invokespecial #100
+        - Methodref [java/lang/RuntimeException.<init> (Ljava/lang/String;Ljava/lang/Throwable;)V]
+      [192] athrow
+      Code attribute exceptions (count = 4):
+      - ExceptionInfo (125 -> 136: 136):
+      - ExceptionInfo (137 -> 141: 144):
+      - Class [java/io/IOException]
+      - ExceptionInfo (147 -> 151: 154):
+      - Class [java/io/IOException]
+      - ExceptionInfo (116 -> 166: 167):
+      - Class [java/io/IOException]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 9):
+        - [32] Var: ..., Stack: (empty)
+        - [136] Var: [a:org/zakky/claudiavoice/MainActivity][a:java/lang/String][a:java/io/InputStream], Stack: [a:java/lang/Throwable]
+        - [144] Var: [a:org/zakky/claudiavoice/MainActivity][a:java/lang/String][a:java/io/InputStream][a:java/lang/Throwable], Stack: [a:java/io/IOException]
+        - [145] Var: ..., Stack: (empty)
+        - [147] Var: -1, Stack: (empty)
+        - [154] Var: ..., Stack: [a:java/io/IOException]
+        - [155] Var: ..., Stack: (empty)
+        - [167] Var: [a:org/zakky/claudiavoice/MainActivity][a:java/lang/String], Stack: [a:java/io/IOException]
+        - [193] Var: ..., Stack: (empty)
+  + Method:       onStop()V
+    Access flags: 0x4
+      = protected void onStop()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 32, locals = 1, stack = 2):
+      [0] aload_0 v0
+      [1] invokespecial #86
+        - Methodref [android/app/ListActivity.onStop ()V]
+      [4] aload_0 v0
+      [5] getfield #81
+        - Fieldref [org/zakky/claudiavoice/MainActivity.h Landroid/media/MediaPlayer;]
+      [8] ifnull +10 (target=18)
+      [11] aload_0 v0
+      [12] getfield #81
+        - Fieldref [org/zakky/claudiavoice/MainActivity.h Landroid/media/MediaPlayer;]
+      [15] invokevirtual #92
+        - Methodref [android/media/MediaPlayer.stop ()V]
+      [18] aload_0 v0
+      [19] aconst_null
+      [20] putfield #81
+        - Fieldref [org/zakky/claudiavoice/MainActivity.h Landroid/media/MediaPlayer;]
+      [23] aload_0 v0
+      [24] getfield #79
+        - Fieldref [org/zakky/claudiavoice/MainActivity.f Landroid/widget/ImageView;]
+      [27] aconst_null
+      [28] invokevirtual #94
+        - Methodref [android/widget/ImageView.setImageBitmap (Landroid/graphics/Bitmap;)V]
+      [31] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 1):
+        - [18] Var: ..., Stack: (empty)
+  + Method:       a(Lorg/zakky/claudiavoice/MainActivity;)Landroid/media/MediaPlayer;
+    Access flags: 0x1008
+      = static android.media.MediaPlayer a(org.zakky.claudiavoice.MainActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #81
+        - Fieldref [org/zakky/claudiavoice/MainActivity.h Landroid/media/MediaPlayer;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()[I
+    Access flags: 0x1008
+      = static int[] a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 4, locals = 0, stack = 1):
+      [0] getstatic #78
+        - Fieldref [org/zakky/claudiavoice/MainActivity.e [I]
+      [3] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lorg/zakky/claudiavoice/MainActivity;Landroid/media/MediaPlayer;)V
+    Access flags: 0x1008
+      = static void a(org.zakky.claudiavoice.MainActivity,android.media.MediaPlayer)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 6, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #81
+        - Fieldref [org/zakky/claudiavoice/MainActivity.h Landroid/media/MediaPlayer;]
+      [5] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
