@@ -4,6 +4,10 @@
 	<ImageView android:id="@+id/background" android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:background="@android:color/white"
 		android:scaleType="fitCenter" />
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="© 2011 Microsoft Corporation All Rights Reserved."
+		android:layout_gravity="bottom" style="@style/CopyrightText" />
 	<ListView android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:id="@android:id/list"
 		android:background="#00000000" android:cacheColorHint="#00000000" />
