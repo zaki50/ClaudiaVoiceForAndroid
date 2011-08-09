@@ -18,8 +18,13 @@ package org.zakky.claudiavoice;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -27,12 +32,12 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 /**
  * クラウディアのボイスリストを表示し、タップされたアイテムに関連付けられている音声を再生する
@@ -84,6 +89,11 @@ public class MainActivity extends ListActivity {
     };
 
     /**
+     * 続けて同じボイスの再生を許すかどうか。
+     */
+    private static boolean sAllowRepeating;
+
+    /**
      * 背景イメージを保持する {@link View} です。
      */
     private ImageView mBackground;
@@ -108,13 +118,22 @@ public class MainActivity extends ListActivity {
         final String[] assetLabels = getResources().getStringArray(R.array.voice_labels);
         assert assetLabels.length == VOICES.length;
 
-        final ListAdapter adapter = new ArrayAdapter<String>(this, R.layout.voice_row, assetLabels);
+        final VoiceLabelAdapter adapter = new VoiceLabelAdapter(this, R.layout.voice_row,
+                assetLabels);
         setListAdapter(adapter);
 
         final ListView lv = getListView();
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (!sAllowRepeating) {
+                    adapter.changeDisabled(position);
+                }
+                if (!view.isEnabled()) {
+                    // 連続再生を防ぐため、enabled でないもののクリックは無視
+                    return;
+                }
+
                 if (mPlayer != null) {
                     mPlayer.stop();
                     mPlayer.release();
@@ -130,13 +149,46 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        mBackground.setImageResource(R.drawable.dummy_bg);
-        if (mBackgroundBitmap != null) {
-            mBackgroundBitmap.recycle();
-            mBackgroundBitmap = null;
+
+        setNextBackground();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        clearBackground();
+    }
+
+    /**
+     * 次に使用する背景画像のアセット名を返します。
+     * 
+     * <p>
+     * 背景画像は、端末がポートレイトかランドスケープかを判定して、適切な値を返します。
+     * </p>
+     * @return
+     * 背景画像アセット名。
+     */
+    private String getNextBackgroundName() {
+        if (isLandscapeMode()) {
+            sBgIndexForLand++;
+            if (BG_LAND.length <= sBgIndexForLand) {
+                sBgIndexForLand = 0;
+            }
+            return BG_LAND[sBgIndexForLand];
         }
 
-        final String assetName = getNextBackground();
+        // for portrait
+        sBgIndexForPort++;
+        if (BG_PORT.length <= sBgIndexForPort) {
+            sBgIndexForPort = 0;
+        }
+        return BG_PORT[sBgIndexForPort];
+    }
+
+    private void setNextBackground() {
+        clearBackground();
+
+        final String assetName = getNextBackgroundName();
         try {
             final InputStream bgStream = getAssets().open(assetName);
             try {
@@ -155,41 +207,12 @@ public class MainActivity extends ListActivity {
         }
     }
 
-    /**
-     * 次に使用する背景画像のアセット名を返します。
-     * 
-     * <p>
-     * 背景画像は、端末がポートレイトかランドスケープかを判定して、適切な値を返します。
-     * </p>
-     * @return
-     * 背景画像アセット名。
-     */
-    private String getNextBackground() {
-        if (isLandscapeMode()) {
-            sBgIndexForLand++;
-            if (BG_LAND.length <= sBgIndexForLand) {
-                sBgIndexForLand = 0;
-            }
-            return BG_LAND[sBgIndexForLand];
+    private void clearBackground() {
+        mBackground.setImageResource(R.drawable.dummy_bg);
+        if (mBackgroundBitmap != null) {
+            mBackgroundBitmap.recycle();
+            mBackgroundBitmap = null;
         }
-
-        // for portrait
-        sBgIndexForPort++;
-        if (BG_PORT.length <= sBgIndexForPort) {
-            sBgIndexForPort = 0;
-        }
-        return BG_PORT[sBgIndexForPort];
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mPlayer != null) {
-            mPlayer.stop();
-        }
-        mPlayer = null;
-
-        mBackground.setImageBitmap(null);
     }
 
     /**
@@ -201,5 +224,70 @@ public class MainActivity extends ListActivity {
         final int orientation = getResources().getConfiguration().orientation;
         final boolean isLand = (orientation == Configuration.ORIENTATION_LANDSCAPE);
         return isLand;
+    }
+}
+
+/**
+ * 1つのアイテムを無効化する機能を持った {@link ListAdapter} クラスです。
+ */
+final class VoiceLabelAdapter extends SimpleAdapter {
+
+    /**
+     * ラベル文字列用のキー。
+     */
+    private static final String KEY_LABEL = "label";
+
+    /**
+     * 有効/無効の情報のためのキー。値には、無効な場合にのみ {@link Boolean#TRUE} が入ります。
+     */
+    private static final String KEY_DISABLED = "disabled";
+
+    public VoiceLabelAdapter(Context context, int resource, String labels[]) {
+        super(context, toLabelMap(labels), resource, new String[] {
+            KEY_LABEL
+        }, new int[] {
+            R.id.text
+        });
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        final View view = super.getView(position, convertView, parent);
+
+        @SuppressWarnings("unchecked")
+        final Map<String, Object> item = (Map<String, Object>) getItem(position);
+        final Boolean disabled = (Boolean) item.get(KEY_DISABLED);
+        view.setEnabled(disabled == null || !disabled.booleanValue());
+        return view;
+    }
+
+    /**
+     * 無効にするアイテムを切り替えます。
+     *
+     * @param position 無効にするアイテムの位置。アイテムが存在しないいちを指定すると
+     * 全てのアイテムが有効になります。
+     */
+    public void changeDisabled(int position) {
+        final int count = getCount();
+        for (int i = 0; i < count; i++) {
+            @SuppressWarnings("unchecked")
+            final Map<String, Object> item = (Map<String, Object>) getItem(i);
+            if (i == position) {
+                item.put(KEY_DISABLED, Boolean.TRUE);
+            } else {
+                item.remove(KEY_DISABLED);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+    private static List<Map<String, Object>> toLabelMap(String[] labels) {
+        final List<Map<String, Object>> result = new ArrayList<Map<String, Object>>(labels.length);
+        for (String label : labels) {
+            final Map<String, Object> map = new HashMap<String, Object>();
+            map.put(KEY_LABEL, label);
+            result.add(map);
+        }
+        return result;
     }
 }
