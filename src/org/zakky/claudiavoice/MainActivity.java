@@ -25,6 +25,8 @@ import java.util.Map;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -93,9 +95,21 @@ public class MainActivity extends ListActivity {
     };
 
     /**
-     * 続けて同じボイスの再生を許すかどうか。
+     * 本家との互換モードが有効かどうか。
+     *
+     * <p>
+     * 互換モードが有効の場合、以下のように動作します。
+     * <p>
+     * <ul>
+     *  <li>同じボイスを連続して再生することを禁止します。</li>
+     * </ul>
      */
-    private static boolean sAllowRepeating;
+    private static boolean sCompatModeEnabled;
+
+    /**
+     * 互換モード設定をプリファレンスに記録する際のキー
+     */
+    private static final String PREF_KEY_COMPAT_MODE = "compat_mode_enabled";
 
     /**
      * 背景イメージを保持する {@link View} です。
@@ -122,6 +136,9 @@ public class MainActivity extends ListActivity {
         final String[] assetLabels = getResources().getStringArray(R.array.voice_labels);
         assert assetLabels.length == VOICES.length;
 
+        final SharedPreferences pref = getPreferences(MODE_PRIVATE);
+        sCompatModeEnabled = pref.getBoolean(PREF_KEY_COMPAT_MODE, true);
+
         final VoiceLabelAdapter adapter = new VoiceLabelAdapter(this, R.layout.voice_row,
                 assetLabels);
         setListAdapter(adapter);
@@ -130,7 +147,7 @@ public class MainActivity extends ListActivity {
         lv.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!sAllowRepeating) {
+                if (sCompatModeEnabled) {
                     adapter.changeDisabled(position);
                 }
                 if (!view.isEnabled()) {
@@ -161,6 +178,22 @@ public class MainActivity extends ListActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        sCompatModeEnabled = !sCompatModeEnabled;
+
+        final Editor pref = getPreferences(MODE_PRIVATE).edit();
+        pref.putBoolean(PREF_KEY_COMPAT_MODE, sCompatModeEnabled);
+        pref.commit();
+
+        final VoiceLabelAdapter adapter = (VoiceLabelAdapter) getListAdapter();
+        adapter.changeDisabled(-1);
+        updateMenuLabel(item);
+        return true;
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
 
@@ -171,17 +204,6 @@ public class MainActivity extends ListActivity {
     protected void onStop() {
         super.onStop();
         clearBackground();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        super.onOptionsItemSelected(item);
-
-        sAllowRepeating ^= true;
-        final VoiceLabelAdapter adapter = (VoiceLabelAdapter) getListAdapter();
-        adapter.changeDisabled(-1);
-        updateMenuLabel(item);
-        return true;
     }
 
     /**
@@ -257,7 +279,7 @@ public class MainActivity extends ListActivity {
      * @param menu メニュー。
      */
     private void updateMenuLabel(MenuItem menuItem) {
-        menuItem.setTitle(sAllowRepeating ? R.string.disable_compat_mode
+        menuItem.setTitle(sCompatModeEnabled ? R.string.disable_compat_mode
                 : R.string.enable_compat_mode);
     }
 }
