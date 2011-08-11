@@ -1,0 +1,15 @@
+org.zakky.claudiavoice.MainActivity:
+    private static final java.lang.String PREF_KEY_COMPAT_MODE
+org.zakky.claudiavoice.R
+org.zakky.claudiavoice.R$array
+org.zakky.claudiavoice.R$attr
+org.zakky.claudiavoice.R$drawable
+org.zakky.claudiavoice.R$id
+org.zakky.claudiavoice.R$layout
+org.zakky.claudiavoice.R$menu
+org.zakky.claudiavoice.R$raw
+org.zakky.claudiavoice.R$string
+org.zakky.claudiavoice.R$style
+org.zakky.claudiavoice.VoiceLabelAdapter:
+    private static final java.lang.String KEY_LABEL
+    private static final java.lang.String KEY_DISABLED
