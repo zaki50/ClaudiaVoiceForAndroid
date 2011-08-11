@@ -31,11 +31,15 @@ import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -147,6 +151,16 @@ public class MainActivity extends ListActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        final MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+
+        final MenuItem menuItem = menu.findItem(R.id.compatibility_mode);
+        updateMenuLabel(menuItem);
+        return true;
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
 
@@ -157,6 +171,17 @@ public class MainActivity extends ListActivity {
     protected void onStop() {
         super.onStop();
         clearBackground();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        sAllowRepeating ^= true;
+        final VoiceLabelAdapter adapter = (VoiceLabelAdapter) getListAdapter();
+        adapter.changeDisabled(-1);
+        updateMenuLabel(item);
+        return true;
     }
 
     /**
@@ -224,6 +249,16 @@ public class MainActivity extends ListActivity {
         final int orientation = getResources().getConfiguration().orientation;
         final boolean isLand = (orientation == Configuration.ORIENTATION_LANDSCAPE);
         return isLand;
+    }
+
+    /**
+     * メニューのラベルを現在の設定に応じて更新します。
+     *
+     * @param menu メニュー。
+     */
+    private void updateMenuLabel(MenuItem menuItem) {
+        menuItem.setTitle(sAllowRepeating ? R.string.disable_compat_mode
+                : R.string.enable_compat_mode);
     }
 }
 
