@@ -318,6 +318,18 @@ final class VoiceLabelAdapter extends SimpleAdapter {
         return view;
     }
 
+    @Override
+    public boolean isEnabled(int position) {
+        // タップした際に反応するかどうかの指定
+
+        @SuppressWarnings("unchecked")
+        final Map<String, Object> item = (Map<String, Object>) getItem(position);
+        final Boolean disabled = (Boolean) item.get(KEY_DISABLED);
+        final boolean result = (disabled == null || !disabled.booleanValue());
+
+        return result;
+    }
+
     /**
      * 無効にするアイテムを切り替えます。
      *
