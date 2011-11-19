@@ -19,6 +19,8 @@ package org.zakky.claudiavoice;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +70,11 @@ public class MainActivity extends ListActivity {
     };
 
     /**
+     * 2011年の誕生日スペシャル背景です
+     */
+    private static final String BG_LAND_BIRTHDAY2011 = "claudia_land_birthday2011.jpg";
+
+    /**
      * {@link #BG_PORT} のうち、どれを背景として使用するかを示すインデックスです。
      */
     private static int sBgIndexForPort = -1;
@@ -92,6 +99,17 @@ public class MainActivity extends ListActivity {
             R.raw.voice_32deploykanryo, R.raw.voice_33build, R.raw.voice_34sippai,
             R.raw.voice_35daiseikou, R.raw.voice_36ei, R.raw.voice_37ah, R.raw.voice_38otsukare,
             R.raw.voice_39kokogapoint, R.raw.voice_40chui,
+
+            // from birthdaypack2011
+            R.raw.voice_b11_11otsukare, R.raw.voice_b11_12hai, R.raw.voice_b11_13okaeri,
+            R.raw.voice_b11_14tr, R.raw.voice_b11_15renraku, R.raw.voice_b11_16setsudan,
+            R.raw.voice_b11_17setsuzoku, R.raw.voice_b11_18sorosoro, R.raw.voice_b11_19batt,
+            R.raw.voice_b11_20osirase, R.raw.voice_b11_21keikokume, R.raw.voice_b11_22keikoku,
+            R.raw.voice_b11_23mail, R.raw.voice_b11_24gomi, R.raw.voice_b11_25hi,
+            R.raw.voice_b11_33hamigaki, R.raw.voice_b11_34onichan, R.raw.voice_b11_35watasibaka,
+            R.raw.voice_b11_36nanjaku, R.raw.voice_b11_37sitteru, R.raw.voice_b11_38dep,
+            R.raw.voice_b11_39vip, R.raw.voice_b11_56hyoi, R.raw.voice_b11_57hyun,
+            R.raw.voice_b11_58pisi, R.raw.voice_b11_59pita, R.raw.voice_b11_60bisi
     };
 
     /**
@@ -206,6 +224,26 @@ public class MainActivity extends ListActivity {
         clearBackground();
     }
 
+    private static final Calendar BIRTHDAY_2011;
+    private static final Calendar NEXT_DAY_OF_BIRTHDAY_2011;
+    static {
+        BIRTHDAY_2011 = GregorianCalendar.getInstance();
+        BIRTHDAY_2011.set(2011, 11 - 1, 20, 0, 0, 0);
+
+        NEXT_DAY_OF_BIRTHDAY_2011 = GregorianCalendar.getInstance();
+        NEXT_DAY_OF_BIRTHDAY_2011.set(2011, 11 - 1, 21, 0, 0, 0);
+    }
+
+    private boolean isBirthday2011() {
+        final Calendar cal = GregorianCalendar.getInstance();
+        if (cal.after(NEXT_DAY_OF_BIRTHDAY_2011)) {
+            return false;
+        }
+        if (cal.before(BIRTHDAY_2011)) {
+            return false;
+        }
+        return true;
+    }
     /**
      * 次に使用する背景画像のアセット名を返します。
      * 
@@ -217,6 +255,10 @@ public class MainActivity extends ListActivity {
      */
     private String getNextBackgroundName() {
         if (isLandscapeMode()) {
+            if (isBirthday2011()) {
+                return BG_LAND_BIRTHDAY2011;
+            }
+
             sBgIndexForLand++;
             if (BG_LAND.length <= sBgIndexForLand) {
                 sBgIndexForLand = 0;

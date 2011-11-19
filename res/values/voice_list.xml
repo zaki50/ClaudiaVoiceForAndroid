@@ -35,5 +35,34 @@
         <item>お疲れ様♪</item>
         <item>ここがポイント!</item>
         <item>注意してね♪</item>
+
+        <!-- from birthdaypack2011 -->
+        <item>おつかれさま！ また明日ね</item>
+        <item>はい、またあとでね！</item>
+        <item>おかえりなさい</item>
+        <item>トラブル発生ね</item>
+        <item>連絡事項よ</item>
+        <item>切断完了！</item>
+        <item>接続完了！正常に動作しているわ</item>
+        <item>そろそろバッテリーが危ないわね。大丈夫？</item>
+        <item>バッテリーが切れるわよ。電源つながってる？</item>
+        <item>お知らせよ！</item>
+        <item>警告メッセージが来てるわよ。大丈夫？</item>
+        <item>警告よ！</item>
+        <item>メールが来てるわよ</item>
+        <item>ゴミ箱のお掃除完了！</item>
+        <item>ハイ！</item>
+        <item>歯みがきしよう?</item>
+        <item>お兄ちゃんのことなんか全然好きじゃないんだからね！</item>
+        <item>あたしって、ほんとバカ</item>
+        <item>軟弱者！</item>
+        <item>知ってる？大体の人は24時間位寝なくても死んだりしないのよ。とりあえず24時間気合入れて頑張りなさい</item>
+        <item>デプローーイ！</item>
+        <item>VIPスワップ！</item>
+        <item>ひょいっ！</item>
+        <item>ヒューン</item>
+        <item>ピシッ</item>
+        <item>ピタッ</item>
+        <item>ビシッ</item>
     </string-array>
 </resources>
