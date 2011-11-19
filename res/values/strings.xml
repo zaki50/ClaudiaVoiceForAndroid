@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">ClaudiaVoice</string>
     <string name="enable_compat_mode">本家互換モード有効化</string>
     <string name="disable_compat_mode">本家互換モード無効化</string>
     <string name="copyright">© 2011 Microsoft Corporation All Rights Reserved.</string>
+
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="voice_labels">
         <item>さぁ、始めるわよ</item>
         <item>終了～</item>
@@ -65,4 +66,5 @@
         <item>ピタッ</item>
         <item>ビシッ</item>
     </string-array>
+
 </resources>
