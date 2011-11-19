@@ -6,7 +6,7 @@
 		android:scaleType="fitCenter" />
 	<TextView android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:text="© 2011 Microsoft Corporation All Rights Reserved."
+		android:text="@string/copyright"
 		android:layout_gravity="bottom" style="@style/CopyrightText" />
 	<ListView android:layout_width="fill_parent"
 		android:layout_height="fill_parent" android:id="@android:id/list"
